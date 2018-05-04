@@ -4,7 +4,7 @@
   <artifactId>assessment-management-platform</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>amp</name>
+  <name>amp</name> 
   <description>评估管理平台</description>
   
    <parent>
