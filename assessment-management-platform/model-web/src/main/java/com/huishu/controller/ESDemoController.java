@@ -16,10 +16,9 @@ public class ESDemoController extends BaseController{
 	
 	@RequestMapping(value="esDemo.do")
 	public void demo(){
-		SearchRequestBuilder searchRequestBuilder = getSearchRequestBuilder();
+		/*SearchRequestBuilder searchRequestBuilder = getSearchRequestBuilder();
 		QueryBuilder queryBuilder=new BoolQueryBuilder();
 		AggregationBuilder aggregation =AggregationBuilders.terms("").field("");
-		searchRequestBuilder.setQuery(queryBuilder).addAggregation(aggregation).execute().actionGet();
-		
+		searchRequestBuilder.setQuery(queryBuilder).addAggregation(aggregation).execute().actionGet();*/
 	}
 }

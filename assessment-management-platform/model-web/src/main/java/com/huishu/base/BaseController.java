@@ -10,9 +10,9 @@ import com.huishu.util.Constants;
 
 public abstract class BaseController {
 	
-	@Autowired
-    private TransportClient transportClient;
-	
+//	@Autowired
+//    private TransportClient transportClient;
+//	
 	public ShiroUser getCurrentShiroUser() {
 		return (ShiroUser)SecurityUtils.getSubject().getPrincipal();
 	}
@@ -29,9 +29,8 @@ public abstract class BaseController {
 		return AjaxResult.error(errorMsg);
 	}
 	
-	public SearchRequestBuilder getSearchRequestBuilder() {
-		return  transportClient.prepareSearch(Constants.es_index).setTypes(Constants.es_type);
-	}
-
+//	public SearchRequestBuilder getSearchRequestBuilder() {
+//		return  transportClient.prepareSearch(Constants.es_index).setTypes(Constants.es_type);
+//	}
 
 }

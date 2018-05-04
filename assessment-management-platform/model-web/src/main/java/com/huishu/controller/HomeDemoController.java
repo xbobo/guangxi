@@ -18,14 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value="/home")
 public class HomeDemoController {
 	
-	@Autowired
-	private TransportClient transportClient;
-	
 	private static final Logger log = LoggerFactory.getLogger(HomeDemoController.class);
 	
     @RequestMapping("/index")
     public String index(Model model) {
-		SearchRequestBuilder setTypes = transportClient.prepareSearch("").setTypes("");
         return "index";
     }
 	
