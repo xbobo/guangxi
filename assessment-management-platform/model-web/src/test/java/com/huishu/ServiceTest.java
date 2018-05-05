@@ -1,6 +1,5 @@
 package com.huishu;
 
-import java.util.HashSet;
 import java.util.List;
 
 import org.elasticsearch.client.transport.TransportClient;
@@ -13,8 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.huishu.bean.SysRole;
 import com.huishu.bean.SysUser;
-import com.huishu.service.DemoService;
-import com.huishu.service.SysResourceService;
 import com.huishu.service.SysRoleService;
 import com.huishu.service.SysUserService;
 
@@ -31,12 +28,7 @@ public class ServiceTest {
 	@Autowired
 	SysRoleService sysRoleService;
 	
-	@Autowired
-	SysResourceService sysResourceService;
-	
-	@Autowired
-	DemoService demoService;
-	
+ 
 /*	@Test
 	public void demoTest(){
 		List<Demo> findAll = demoService.findAll();

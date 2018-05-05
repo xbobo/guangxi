@@ -19,12 +19,17 @@
    		</dependency>
    		<dependency>
 	   		<groupId>com.huishu</groupId>
-	   		<artifactId>model-demo</artifactId>
+	   		<artifactId>model-es</artifactId>
 	   		<version>0.0.1-SNAPSHOT</version>
    		</dependency>
    		<dependency>
 	   		<groupId>com.huishu</groupId>
-	   		<artifactId>model-es</artifactId>
+	   		<artifactId>model-advertisement</artifactId>
+	   		<version>0.0.1-SNAPSHOT</version>
+   		</dependency>
+   		<dependency>
+	   		<groupId>com.huishu</groupId>
+	   		<artifactId>model-commom</artifactId>
 	   		<version>0.0.1-SNAPSHOT</version>
    		</dependency>
    		

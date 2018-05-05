@@ -23,7 +23,7 @@ public class AdminController {
             customizedToken.setRememberMe(false);
             try {
                 currentUser.login(customizedToken);
-                return "index";
+                return "1";
             } catch (IncorrectCredentialsException ice) {
                 System.out.println("用户名/密码不匹配！");
             } catch (LockedAccountException lae) {
@@ -31,6 +31,8 @@ public class AdminController {
             } catch (AuthenticationException ae) {
                 System.out.println(ae.getMessage());
             }
+        }else{
+        	return "1";
         }
         return "redirect:/login";
     }

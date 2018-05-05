@@ -7,11 +7,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.springframework.stereotype.Controller;
@@ -19,9 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.huishu.security.CustomizedToken;
 import com.huishu.util.RSAUtils;
 
 
@@ -91,6 +86,15 @@ public class LoginController {
 			request.setAttribute("publicKeyExponent", publicKeyExponent);
 			request.setAttribute("publicKeyModulus", publicKeyModulus);
 		}
+	}
+	
+	@RequestMapping("loginOut.do")
+	public String loginOut(){
+		Subject subject = SecurityUtils.getSubject();
+		if (subject.isAuthenticated()) {
+			subject.logout();
+		}
+		return "redirect:/login";
 	}
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
