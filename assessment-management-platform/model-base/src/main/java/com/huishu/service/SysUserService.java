@@ -7,4 +7,6 @@ public interface SysUserService {
 	SysUser findByUsername(String username);
 	
 	void save(SysUser user);
+	
+	SysUser findOne(Integer id);
 }

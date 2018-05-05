@@ -26,8 +26,8 @@ public class SysRoleServiceImpl implements SysRoleService {
 	}
 
 	@Override
-	public void delete(Integer id) {
-		sysRoleRepository.delete(id);
+	public SysRole findOne(Integer id) {
+		return sysRoleRepository.findOne(id);
 	}
 
 }

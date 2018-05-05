@@ -34,4 +34,9 @@ public class SysUserServiceImpl implements SysUserService{
 		sysUserRepository.save(user);
 	}
 
+	@Override
+	public SysUser findOne(Integer id) {
+		return sysUserRepository.findOne(id);
+	}
+
 }

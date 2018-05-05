@@ -2,19 +2,16 @@ package com.huishu.bean;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.HashSet;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -65,7 +62,7 @@ public class SysRole implements Serializable{
 	 * 创建时间
 	 */
 	@Column(name="CreatedOn")
-	private Timestamp createdOn;
+	private Date createdOn;
 	/**
 	 * 修改人
 	 */
@@ -75,13 +72,13 @@ public class SysRole implements Serializable{
 	 * 修改时间
 	 */
 	@Column(name="ModifiedOn")
-	private Timestamp modifiedOn;
+	private Date modifiedOn;
 	
 	/**
 	 * 时间戳
 	 */
 	@Column(name="DateTimeStamp")
-	private Timestamp dateTimeStamp;
+	private Long dateTimeStamp;
 	
 	/***
 	 * 备注
@@ -93,12 +90,12 @@ public class SysRole implements Serializable{
 	private Set<SysUser> users;
 	
 	
-	@ManyToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+/*	@ManyToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
 	@JoinTable(name="SysRoleResource",
 		joinColumns={@JoinColumn(name="RoleId",referencedColumnName="Id")
 					},
 		inverseJoinColumns={@JoinColumn(name="ResourceId",referencedColumnName="Id")})
-	private Set<SysResource> resources;
+	private Set<SysResource> resources;*/
 
 	public Integer getId() {
 		return id;
@@ -140,36 +137,13 @@ public class SysRole implements Serializable{
 		this.createdBy = createdBy;
 	}
 
-	public Timestamp getCreatedOn() {
-		return createdOn;
-	}
-
-	public void setCreatedOn(Timestamp createdOn) {
-		this.createdOn = createdOn;
-	}
-
+	  
 	public Integer getModifiedBy() {
 		return modifiedBy;
 	}
 
 	public void setModifiedBy(Integer modifiedBy) {
 		this.modifiedBy = modifiedBy;
-	}
-
-	public Timestamp getModifiedOn() {
-		return modifiedOn;
-	}
-
-	public void setModifiedOn(Timestamp modifiedOn) {
-		this.modifiedOn = modifiedOn;
-	}
-
-	public Timestamp getDateTimeStamp() {
-		return dateTimeStamp;
-	}
-
-	public void setDateTimeStamp(Timestamp dateTimeStamp) {
-		this.dateTimeStamp = dateTimeStamp;
 	}
 
 	public String getComments() {
@@ -202,11 +176,35 @@ public class SysRole implements Serializable{
 		this.users = users;
 	}
 
-	public Set<SysResource> getResources() {
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public Date getModifiedOn() {
+		return modifiedOn;
+	}
+
+	public void setModifiedOn(Date modifiedOn) {
+		this.modifiedOn = modifiedOn;
+	}
+
+	public Long getDateTimeStamp() {
+		return dateTimeStamp;
+	}
+
+	public void setDateTimeStamp(Long dateTimeStamp) {
+		this.dateTimeStamp = dateTimeStamp;
+	}
+
+	/*public Set<SysResource> getResources() {
 		return resources;
 	}
 	@JsonBackReference
 	public void setResources(Set<SysResource> resources) {
 		this.resources = resources;
-	}
+	}*/
 }

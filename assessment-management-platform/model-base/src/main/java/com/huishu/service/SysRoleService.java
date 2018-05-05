@@ -10,5 +10,5 @@ public interface SysRoleService {
 	
 	void save(SysRole role);
 	
-	void delete(Integer id);
+	SysRole findOne(Integer id);
 }

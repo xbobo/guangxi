@@ -30,7 +30,7 @@ public class SysCarInfo implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="Id")
+	@Column(name="Id", unique = false, nullable = false)
 	private Integer id;
 	/**
 	 * 品牌

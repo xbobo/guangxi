@@ -24,8 +24,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
  * @date: 2018年4月25日 下午4:33:17 
  *
  */
-@Entity
-@Table(name="SysResource")
+//@Entity
+//@Table(name="SysResource")
 public class SysResource implements Serializable {
 	/**
 	 * 
@@ -112,6 +112,7 @@ public class SysResource implements Serializable {
 	 */
 	@Column(name="Comments")
 	private String comments;
+	
 	@ManyToMany(mappedBy="resources",fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	private Set<SysRole> roles;
 

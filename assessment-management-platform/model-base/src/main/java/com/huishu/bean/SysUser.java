@@ -60,6 +60,12 @@ public class SysUser implements Serializable {
 	private String password;
 	
 	/**
+	 * 资源标识
+	 */
+	@Column(name="Resources")
+	private String resources;
+	
+	/**
 	 * 加密盐值
 	 */
 	@Column(name="Salt")
@@ -120,7 +126,7 @@ public class SysUser implements Serializable {
 	 * 来源
 	 */
 	@Column(name="Source")
-	private String Source;
+	private String source;
 	/**
 	 * 状态
 	 */
@@ -347,6 +353,54 @@ public class SysUser implements Serializable {
 			return(username.equals(p.username) && id == p.id);
 		}
 		return super.equals(obj);
+	}
+
+	public String getResources() {
+		return resources;
+	}
+
+	public void setResources(String resources) {
+		this.resources = resources;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Integer getAddressType() {
+		return addressType;
+	}
+
+	public void setAddressType(Integer addressType) {
+		this.addressType = addressType;
+	}
+
+	public String getCredential() {
+		return credential;
+	}
+
+	public void setCredential(String credential) {
+		this.credential = credential;
+	}
+
+	public Integer getCredentialType() {
+		return credentialType;
+	}
+
+	public void setCredentialType(Integer credentialType) {
+		this.credentialType = credentialType;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
 	}
 
 }
