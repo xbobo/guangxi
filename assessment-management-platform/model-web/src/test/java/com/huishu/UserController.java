@@ -1,4 +1,4 @@
-package com.huishu.controller;
+package com.huishu;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -23,7 +23,7 @@ import com.huishu.security.CustomizedToken;
  *
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
 
 	private static final Logger log = LoggerFactory

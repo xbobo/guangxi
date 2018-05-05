@@ -1,14 +1,11 @@
-package com.huishu.base;
+package com.huishu.controller;
 
 import org.apache.shiro.SecurityUtils;
-import org.elasticsearch.action.search.SearchRequestBuilder;
-import org.elasticsearch.client.transport.TransportClient;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import com.huishu.commom.AjaxResult;
 import com.huishu.security.ShiroUser;
-import com.huishu.util.Constants;
 
-public abstract class BaseController {
+public abstract class ShiroBaseController {
 //	
 	public ShiroUser getCurrentShiroUser() {
 		return (ShiroUser)SecurityUtils.getSubject().getPrincipal();

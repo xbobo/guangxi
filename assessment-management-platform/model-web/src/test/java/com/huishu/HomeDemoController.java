@@ -1,4 +1,4 @@
-package com.huishu.controller;
+package com.huishu;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -22,7 +22,7 @@ public class HomeDemoController {
 	
     @RequestMapping("/index")
     public String index(Model model) {
-        return "index";
+        return "2";
     }
 	
 	@RequiresPermissions("user:create")
