@@ -190,5 +190,7 @@
     	<module>model-demo</module>
     	<module>model-web</module>
     	<module>model-es</module>
+    	<module>model-advertisement</module>
+    	<module>model-commom</module>
     </modules>
 </project>
