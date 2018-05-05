@@ -8,10 +8,10 @@
   <artifactId>model-advertisement</artifactId>
   <description>广告效果评估</description>
   <dependencies>
-  	   <dependency>
+  	   <!-- <dependency>
 	   		<groupId>com.huishu</groupId>
 	   		<artifactId>model-es</artifactId>
 	   		<version>0.0.1-SNAPSHOT</version>
-   		</dependency>
+   		</dependency> -->
   </dependencies>
 </project>
