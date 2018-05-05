@@ -12,6 +12,8 @@ public class ShiroUser implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -3463156268677281735L;
+	
+	private Integer id;
 
 	private String loginName;
 	
@@ -21,10 +23,11 @@ public class ShiroUser implements Serializable {
 	
 	private Set<SysRole> roles;
 
-	public ShiroUser(String loginName, String realName, Set<SysRole> roles) {
+	public ShiroUser(Integer id,String loginName, String realName, Set<SysRole> roles) {
 		this.loginName = loginName;
 		this.realName = realName;
 		this.roles = roles;
+		this.id=id;
 	}
 	
 	public String getLoginName() {
@@ -99,4 +102,13 @@ public class ShiroUser implements Serializable {
 	public void setCurRole(String curRole) {
 		this.curRole = curRole;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 }

@@ -7,7 +7,6 @@ import java.util.Set;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -24,7 +23,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.huishu.bean.SysResource;
 import com.huishu.bean.SysRole;
 import com.huishu.bean.SysUser;
-import com.huishu.service.SysResourceService;
 import com.huishu.service.SysUserService;
 
 public class UserRealm extends AuthorizingRealm  {
@@ -32,8 +30,8 @@ public class UserRealm extends AuthorizingRealm  {
 	@Autowired
 	private SysUserService sysUserShiroService;
 	
-	@Autowired
-	SysResourceService sysResourceService;
+//	@Autowired
+//	SysResourceService sysResourceService;
 
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(
@@ -57,7 +55,7 @@ public class UserRealm extends AuthorizingRealm  {
         String realmName = getName();
         // （4）盐值：取用户信息中唯一的字段来生成盐值，避免由于两个用户原始密码相同，加密后的密码也相同
          byte[] salt = Encodes.decodeHex(user.getSalt());
-		 return new SimpleAuthenticationInfo(new ShiroUser(user.getUsername(),user.getRealname(), user.getRoles()
+		 return new SimpleAuthenticationInfo(new ShiroUser(user.getId(),user.getUsername(),user.getRealname(), user.getRoles()
 				), user.getPassword(), ByteSource.Util.bytes(salt), getName());
 	}
 	
@@ -78,25 +76,26 @@ public class UserRealm extends AuthorizingRealm  {
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 		Set<SysRole> roles = user.getRoles();
 		Set<String> roleList=new HashSet<String>();
-		List<Integer> resourcesIds=new ArrayList<Integer>();
+		//List<Integer> resourcesIds=new ArrayList<Integer>();
 		if(roles!=null&&roles.size()>0){
 			for(SysRole role:roles){
 				 roleList.add(role.getName());
-				 Set<SysResource> resources = role.getResources();
-				 for(SysResource resource:resources){
-					 resourcesIds.add(resource.getId());
-				 }			}
+//				 Set<SysResource> resources = role.getResources();
+//				 for(SysResource resource:resources){
+//					 resourcesIds.add(resource.getId());
+//				 }			
+			}
 		}
 		info.addRoles(roleList);
 		//设置权限
-		List<SysResource> resources = sysResourceService.findByIds(resourcesIds);
-		List<String> permissions=new ArrayList<String>();
-		if(resources!=null&&resources.size()>0){
-			for(SysResource resource:resources){
-				permissions.add(resource.getPermission());
-			}
-		}
-		info.addStringPermissions(permissions);
+//		List<SysResource> resources = sysResourceService.findByIds(resourcesIds);
+//		List<String> permissions=new ArrayList<String>();
+//		if(resources!=null&&resources.size()>0){
+//			for(SysResource resource:resources){
+//				permissions.add(resource.getPermission());
+//			}
+//		}
+//		info.addStringPermissions(permissions);
 		return info;
 	}
 
